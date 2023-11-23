@@ -6,10 +6,15 @@ import sliderImage2 from '../../../assets/home/slide2.jpg'
 import sliderImage3 from '../../../assets/home/slide3.jpg'
 import sliderImage4 from '../../../assets/home/slide4.jpg'
 import sliderImage5 from '../../../assets/home/slide5.jpg'
+import SectionHeader from '../../../components/sectionHeader/sectionHeader';
 
 const CategorySlider = () => {
   return (
     <div className='mb-12 mt-10 px-5 lg:px-0'>
+        <SectionHeader
+            subHeader={'--- From 11am to 10pm ---'}
+            mainHeader={"ORDER ONLINE"}
+        ></SectionHeader>
       <Swiper
         slidesPerView={4}
         spaceBetween={30}

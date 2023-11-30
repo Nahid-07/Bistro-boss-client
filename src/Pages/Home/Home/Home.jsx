@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import CategorySlider from '../categorySlider/CategorySlider';
 import FeaturedSection from '../featuredection/FeaturedSection';
 import MenuSection from '../menuSection/MenuSection';
+import CallUs from '../callus/CallUs';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
                 <CategorySlider></CategorySlider>
                 <FeaturedSection></FeaturedSection>
                 <MenuSection></MenuSection>
+                <CallUs></CallUs>
             </section>
         </main>
     );

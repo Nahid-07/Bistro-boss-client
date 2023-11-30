@@ -26,6 +26,10 @@ const MenuSection = () => {
                     )
                 }
             </div>
+            <div className="flex justify-center">
+
+            <button className="text-lg px-3 font-semibold border-b-4 border-black m-10">View Full Menu</button>
+            </div>
         </div>
     );
 };

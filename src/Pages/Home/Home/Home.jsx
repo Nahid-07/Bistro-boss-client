@@ -4,6 +4,7 @@ import CategorySlider from '../categorySlider/CategorySlider';
 import FeaturedSection from '../featuredection/FeaturedSection';
 import MenuSection from '../menuSection/MenuSection';
 import CallUs from '../callus/CallUs';
+import ChefRecoomendSection from '../ChefRecommendSection/ChefRecoomendSection';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
                 <FeaturedSection></FeaturedSection>
                 <MenuSection></MenuSection>
                 <CallUs></CallUs>
+                <ChefRecoomendSection></ChefRecoomendSection>
             </section>
         </main>
     );

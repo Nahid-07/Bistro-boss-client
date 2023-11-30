@@ -19,7 +19,7 @@ const MenuSection = () => {
             subHeader={'----Check it out----'}
             mainHeader={"From our menu"}
             ></SectionHeader>
-            <div className="grid grid-cols-2 gap-5 mb-20">
+            <div className="grid mx-5 lg:mx-0 md:grid-cols-2 gap-5 mb-20">
                 {
                     menu.map(item =>
                         <Menu key={item._id} item={item}></Menu>

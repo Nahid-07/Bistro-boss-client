@@ -18,7 +18,7 @@ const ChefRecoomendSection = () => {
             subHeader={"---Should Try---"}
             mainHeader={"CHEF RECOMMENDS"}
         ></SectionHeader>
-        <div className="grid grid-cols-3 gap-5 mb-20 mt-10">
+        <div className="grid md:grid-cols-3 mx-5 lg:mx-0 gap-5 mb-20 mt-10">
         {
             menuItems.map(salad => <ChefRecommendCart
                 key={salad._id}

@@ -5,6 +5,7 @@ import FeaturedSection from '../featuredection/FeaturedSection';
 import MenuSection from '../menuSection/MenuSection';
 import CallUs from '../callus/CallUs';
 import ChefRecoomendSection from '../ChefRecommendSection/ChefRecoomendSection';
+import FeaturedBanner from '../featuredBanner/FeaturedBanner';
 
 const Home = () => {
     return (
@@ -18,6 +19,9 @@ const Home = () => {
                 <MenuSection></MenuSection>
                 <CallUs></CallUs>
                 <ChefRecoomendSection></ChefRecoomendSection>
+            </section>
+            <section>
+                <FeaturedBanner></FeaturedBanner>
             </section>
         </main>
     );

@@ -6,6 +6,7 @@ import MenuSection from '../menuSection/MenuSection';
 import CallUs from '../callus/CallUs';
 import ChefRecoomendSection from '../ChefRecommendSection/ChefRecoomendSection';
 import FeaturedBanner from '../featuredBanner/FeaturedBanner';
+import Review from '../review/Review';
 
 const Home = () => {
     return (
@@ -22,6 +23,9 @@ const Home = () => {
             </section>
             <section>
                 <FeaturedBanner></FeaturedBanner>
+            </section>
+            <section className='max-w-7xl mx-auto'>
+                <Review></Review>
             </section>
         </main>
     );

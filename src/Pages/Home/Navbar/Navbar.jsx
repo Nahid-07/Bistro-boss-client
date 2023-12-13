@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
@@ -10,10 +11,10 @@ const Navbar = () => {
           <h4 className="text-2xl uppercase font-bold">Restaurant</h4>
         </div>
         <ul className="flex space-x-6 text-lg">
-          <li>Home</li>
+          <Link to='/'><li>Home</li></Link>
           <li>Contact Us</li>
           <li>Dashbord</li>
-          <li>Our menu</li>
+          <Link to='/ourmenu'><li>Our menu</li></Link>
           <li>Our Shop</li>
           <li>Sign Out</li>
         </ul>
@@ -70,7 +71,7 @@ const Navbar = () => {
           <li>Home</li>
           <li>Contact Us</li>
           <li>Dashbord</li>
-          <li>Our menu</li>
+          <Link to='/ourmenu'><li>Our menu</li></Link>
           <li>Our Shop</li>
           <li>Sign Out</li>
         </ul>

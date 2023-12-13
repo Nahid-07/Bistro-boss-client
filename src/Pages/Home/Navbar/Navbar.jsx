@@ -2,8 +2,6 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
-  const [close, setClose] = useState(true);
-  console.log(close);
   return (
     <div className="px-6 py-2">
       <nav className="lg:flex justify-between items-center hidden">

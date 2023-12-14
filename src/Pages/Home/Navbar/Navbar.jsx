@@ -63,8 +63,8 @@ const Navbar = () => {
       </div>
 
       <nav
-        className={`absolute z-10 lg:hidden bg-white w-full left-0 p-6 duration-300 ${
-          open ? "left-[1000px]" : "left-0"
+        className={`absolute z-10 lg:hidden bg-white left-0 w-full p-6 duration-200 ${
+          open ? "-top-[1000px]" : "top-[80px]"
         }`}
       >
         <ul className="flex flex-col items-center justify-center space-y-6 text-lg">

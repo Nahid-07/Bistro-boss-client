@@ -3,7 +3,6 @@ import ourshopBG from "../../../assets/shop/banner2.jpg";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useMenu from "../../hooks/useMenu";
-import FoodOrderCArd from "../../../components/foodOrderCard/FoodOrderCArd";
 import FoodItems from "../foodItems/FoodItems";
 
 const OurShop = () => {
@@ -20,8 +19,9 @@ const OurShop = () => {
         title={"OUR SHOP"}
         subDescription={"Would you like to try a dish?"}
       ></MenuPageFeaturedSection>
-      <section className="max-w-7xl mx-auto">
+      <section className="max-w-7xl mx-auto my-20">
         <Tabs>
+          <div className="mb-10 md:text-xl font-semibold">
           <TabList>
             <Tab>Salad</Tab>
             <Tab>Pizza</Tab>
@@ -29,31 +29,22 @@ const OurShop = () => {
             <Tab>Desserts</Tab>
             <Tab>Drinks</Tab>
           </TabList>
+          </div>
 
           <TabPanel>
-            <FoodItems
-                item={salad}
-            ></FoodItems>
+            <FoodItems item={salad}></FoodItems>
           </TabPanel>
           <TabPanel>
-            <FoodItems
-                item={pizza}
-            ></FoodItems>
+            <FoodItems item={pizza}></FoodItems>
           </TabPanel>
           <TabPanel>
-            <FoodItems
-                item={soup}
-            ></FoodItems>
+            <FoodItems item={soup}></FoodItems>
           </TabPanel>
           <TabPanel>
-            <FoodItems
-                item={desserts}
-            ></FoodItems>
+            <FoodItems item={desserts}></FoodItems>
           </TabPanel>
           <TabPanel>
-            <FoodItems
-                item={drinks}
-            ></FoodItems>
+            <FoodItems item={drinks}></FoodItems>
           </TabPanel>
         </Tabs>
       </section>

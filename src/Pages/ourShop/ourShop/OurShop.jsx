@@ -2,8 +2,17 @@ import MenuPageFeaturedSection from "../../../components/MenuPageFeaturedSection
 import ourshopBG from "../../../assets/shop/banner2.jpg";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import useMenu from "../../hooks/useMenu";
+import FoodOrderCArd from "../../../components/foodOrderCard/FoodOrderCArd";
+import FoodItems from "../foodItems/FoodItems";
 
 const OurShop = () => {
+  const [menu] = useMenu();
+  const drinks = menu.filter((drinks) => drinks.category === "drinks");
+  const desserts = menu.filter((dessert) => dessert.category === "dessert");
+  const pizza = menu.filter((pizza) => pizza.category === "pizza");
+  const soup = menu.filter((soup) => soup.category === "soup");
+  const salad = menu.filter((salad) => salad.category === "salad");
   return (
     <section>
       <MenuPageFeaturedSection
@@ -22,10 +31,29 @@ const OurShop = () => {
           </TabList>
 
           <TabPanel>
-            <h2>Any content 1</h2>
+            <FoodItems
+                item={salad}
+            ></FoodItems>
           </TabPanel>
           <TabPanel>
-            <h2>Any content 2</h2>
+            <FoodItems
+                item={pizza}
+            ></FoodItems>
+          </TabPanel>
+          <TabPanel>
+            <FoodItems
+                item={soup}
+            ></FoodItems>
+          </TabPanel>
+          <TabPanel>
+            <FoodItems
+                item={desserts}
+            ></FoodItems>
+          </TabPanel>
+          <TabPanel>
+            <FoodItems
+                item={drinks}
+            ></FoodItems>
           </TabPanel>
         </Tabs>
       </section>

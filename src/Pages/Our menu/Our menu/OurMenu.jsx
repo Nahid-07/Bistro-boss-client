@@ -34,7 +34,7 @@ const OurMenu = () => {
           subHeader={"---Don't miss---"}
           mainHeader={"TODAY'S OFFER"}
         ></SectionHeader>
-        <div className="grid mx-5 lg:mx-0 md:grid-cols-2 gap-5 my-20">
+        <div className="grid mx-5 lg:mx-0 md:grid-cols-2 gap-10 my-20">
           {todaysOffer.map((item) => (
             <Menu key={item._id} item={item}></Menu>
           ))}
@@ -51,7 +51,7 @@ const OurMenu = () => {
         ></MenuPageFeaturedSection>
       </section>
       <section className="max-w-7xl mx-auto">
-        <div className="grid mx-5 lg:mx-0 md:grid-cols-2 gap-5 my-20">
+        <div className="grid mx-5 lg:mx-0 md:grid-cols-2 gap-10 my-20">
           {desserts.map((item) => (
             <Menu key={item._id} item={item}></Menu>
           ))}
@@ -68,7 +68,7 @@ const OurMenu = () => {
         ></MenuPageFeaturedSection>
       </section>
       <section className="max-w-7xl mx-auto">
-        <div className="grid mx-5 lg:mx-0 md:grid-cols-2 gap-5 my-20">
+        <div className="grid mx-5 lg:mx-0 md:grid-cols-2 gap-10 my-20">
           {pizza.map((item) => (
             <Menu key={item._id} item={item}></Menu>
           ))}
@@ -85,7 +85,7 @@ const OurMenu = () => {
         ></MenuPageFeaturedSection>
       </section>
       <section className="max-w-7xl mx-auto">
-        <div className="grid mx-5 lg:mx-0 md:grid-cols-2 gap-5 my-20">
+        <div className="grid mx-5 lg:mx-0 md:grid-cols-2 gap-10 my-20">
           {soup.map((item) => (
             <Menu key={item._id} item={item}></Menu>
           ))}
@@ -102,7 +102,7 @@ const OurMenu = () => {
         ></MenuPageFeaturedSection>
       </section>
       <section className="max-w-7xl mx-auto">
-        <div className="grid mx-5 lg:mx-0 md:grid-cols-2 gap-5 my-20">
+        <div className="grid mx-5 lg:mx-0 md:grid-cols-2 gap-10 my-20">
           {salad.map((item) => (
             <Menu key={item._id} item={item}></Menu>
           ))}

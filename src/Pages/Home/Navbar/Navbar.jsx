@@ -12,7 +12,7 @@ const Navbar = () => {
         </div>
         <ul className="flex space-x-6 text-lg">
           <Link to='/'><li>Home</li></Link>
-          <li>Contact Us</li>
+          <Link to='/contactUs'><li>Contact Us</li></Link>
           <li>Dashbord</li>
           <Link to='/ourmenu'><li>Our menu</li></Link>
           <Link to='/ourShop'><li>Our Shop</li></Link>
@@ -69,7 +69,7 @@ const Navbar = () => {
       >
         <ul className="flex flex-col items-center justify-center space-y-6 text-lg">
           <li>Home</li>
-          <li>Contact Us</li>
+          <Link to='/contactUs'><li>Contact Us</li></Link>
           <li>Dashbord</li>
           <Link to='/ourmenu'><li>Our menu</li></Link>
           <Link to='/ourShop'><li>Our Shop</li></Link>

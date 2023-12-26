@@ -4,10 +4,11 @@ import menuPageheaderBG from "../.././../assets/menu/banner3.jpg";
 import dessertsBg from "../../../assets/menu/dessert-bg.jpeg";
 import pizzaBg from "../../../assets/menu/pizza-bg.jpg";
 import soupBg from "../../../assets/menu/soup-bg.jpg";
-import saladBg from "../../../assets/menu/salad-bg.jpg"
+import saladBg from "../../../assets/menu/salad-bg.jpg";
 import SectionHeader from "../../../components/sectionHeader/sectionHeader";
 import useMenu from "../../hooks/useMenu";
 import Menu from "../../../components/menu/Menu";
+import { Link } from "react-router-dom";
 
 const OurMenu = () => {
   const [menu] = useMenu();
@@ -16,7 +17,6 @@ const OurMenu = () => {
   const pizza = menu.filter((pizza) => pizza.category === "pizza");
   const soup = menu.filter((soup) => soup.category === "soup");
   const salad = menu.filter((salad) => salad.category === "salad");
-  console.log(todaysOffer);
   return (
     <main>
       <Helmet>
@@ -39,6 +39,13 @@ const OurMenu = () => {
             <Menu key={item._id} item={item}></Menu>
           ))}
         </div>
+        <div className="flex justify-center mb-10">
+          <Link to="/ourShop">
+            <button className="border-b-2 border-black rounded px-4 py-2 hover:border-2 duration-100 ease-out">
+              Order food
+            </button>
+          </Link>
+        </div>
       </section>
       {/* dessert */}
       <section>
@@ -55,6 +62,13 @@ const OurMenu = () => {
           {desserts.map((item) => (
             <Menu key={item._id} item={item}></Menu>
           ))}
+        </div>
+        <div className="flex justify-center mb-10">
+          <Link to="/ourShop">
+            <button className="border-b-2 border-black rounded px-4 py-2 hover:border-2 duration-100 ease-out">
+              Order food
+            </button>
+          </Link>
         </div>
       </section>
       {/* pizza */}
@@ -73,6 +87,13 @@ const OurMenu = () => {
             <Menu key={item._id} item={item}></Menu>
           ))}
         </div>
+        <div className="flex justify-center mb-10">
+          <Link to="/ourShop">
+            <button className="border-b-2 border-black rounded px-4 py-2 hover:border-2 duration-100 ease-out">
+              Order food
+            </button>
+          </Link>
+        </div>
       </section>
       {/* soup */}
       <section>
@@ -90,6 +111,13 @@ const OurMenu = () => {
             <Menu key={item._id} item={item}></Menu>
           ))}
         </div>
+        <div className="flex justify-center mb-10">
+          <Link to="/ourShop">
+            <button className="border-b-2 border-black rounded px-4 py-2 hover:border-2 duration-100 ease-out">
+              Order food
+            </button>
+          </Link>
+        </div>
       </section>
       {/* salad */}
       <section>
@@ -106,6 +134,13 @@ const OurMenu = () => {
           {salad.map((item) => (
             <Menu key={item._id} item={item}></Menu>
           ))}
+        </div>
+        <div className="flex justify-center mb-10">
+          <Link to="/ourShop">
+            <button className="border-b-2 border-black rounded px-4 py-2 hover:border-2 duration-100 ease-out">
+              Order food
+            </button>
+          </Link>
         </div>
       </section>
     </main>

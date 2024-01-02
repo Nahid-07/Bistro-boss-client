@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import bg from "../../assets/others/authentication.png";
 
 const Login = () => {
@@ -13,6 +14,9 @@ const Login = () => {
       style={{ backgroundImage: `url(${bg})` }}
       className="min-h-screen flex items-center"
     >
+      <Helmet>
+        <title>Bistro boss -- Login</title>
+      </Helmet>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">

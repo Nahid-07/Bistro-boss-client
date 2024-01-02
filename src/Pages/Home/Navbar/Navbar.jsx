@@ -16,7 +16,7 @@ const Navbar = () => {
           <li>Dashbord</li>
           <Link to='/ourmenu'><li>Our menu</li></Link>
           <Link to='/ourShop'><li>Our Shop</li></Link>
-          <li>Sign Out</li>
+          <Link to='/login'><li>Login</li></Link>
         </ul>
       </nav>
       {/* responsive */}
@@ -73,7 +73,7 @@ const Navbar = () => {
           <li>Dashbord</li>
           <Link to='/ourmenu'><li>Our menu</li></Link>
           <Link to='/ourShop'><li>Our Shop</li></Link>
-          <li>Sign Out</li>
+          <Link to='/login'><li>Login</li></Link>
         </ul>
       </nav>
     </div>

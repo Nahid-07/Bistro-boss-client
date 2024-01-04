@@ -1,13 +1,23 @@
 import { Helmet } from "react-helmet-async";
 import bg from "../../assets/others/authentication.png";
+import {
+  loadCaptchaEnginge,
+  LoadCanvasTemplate,
+  LoadCanvasTemplateNoReload,
+  validateCaptcha,
+} from "react-simple-captcha";
+import { useEffect } from "react";
 
 const Login = () => {
+  useEffect(()=>{
+    loadCaptchaEnginge(6)
+  },[])
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email,password);
+    console.log(email, password);
   };
   return (
     <div
@@ -78,7 +88,29 @@ const Login = () => {
                 />
               </div>
             </div>
-
+            <div>
+              <div className="flex items-center justify-between">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
+                  Enter the captcha code
+                </label>
+                
+              </div>
+              <div className="mt-2">
+                <LoadCanvasTemplate />
+              </div>
+              <div className="mt-2">
+                <input
+                  name="email"
+                  type="text"
+                  placeholder="enter the captcha"
+                  required
+                  className="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
             <div>
               <button
                 type="submit"

@@ -1,15 +1,17 @@
 import { Helmet } from "react-helmet-async";
 import bg from "../../assets/others/authentication.png";
+import { FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
- 
-  const handleLogin = e =>{
+  const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email,password);
-  }
+    console.log(email, password);
+  };
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
@@ -26,14 +28,9 @@ const Login = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form
-          onSubmit={handleLogin}
-            className="space-y-6"
-          >
+          <form onSubmit={handleLogin} className="space-y-6">
             <div>
-              <label
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
+              <label className="block text-sm font-medium leading-6 text-gray-900">
                 Email address
               </label>
               <div className="mt-2">
@@ -49,9 +46,7 @@ const Login = () => {
 
             <div>
               <div className="flex items-center justify-between">
-                <label
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
+                <label className="block text-sm font-medium leading-6 text-gray-900">
                   Password
                 </label>
                 <div className="text-sm">
@@ -73,11 +68,9 @@ const Login = () => {
                 />
               </div>
             </div>
-            
+
             <div>
-              <button
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
+              <button className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                 Sign in
               </button>
             </div>
@@ -92,6 +85,17 @@ const Login = () => {
               Create a new account
             </a>
           </p>
+          <div className="flex justify-around mt-10 border p-5 bg-slate-100 rounded-sm shadow-md">
+            <div>
+              <FaFacebook className="w-12 h-12 text-blue-600" />
+            </div>
+            <div>
+              <FcGoogle className="w-12 h-12" />
+            </div>
+            <div>
+              <FaXTwitter className="w-12 h-12 text-black" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

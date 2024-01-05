@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import bg from "../../assets/others/authentication.png";
-import { FaFacebook  } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 const SignIn = () => {
@@ -17,12 +17,12 @@ const SignIn = () => {
       className="min-h-screen flex items-center"
     >
       <Helmet>
-        <title>Bistro boss -- Login</title>
+        <title>Bistro boss -- Sign Up</title>
       </Helmet>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Sign in to your account
+            Sign up new account
           </h2>
         </div>
 
@@ -111,9 +111,15 @@ const SignIn = () => {
             </a>
           </p>
           <div className="flex justify-around mt-10 border p-5 bg-slate-100 rounded-sm shadow-md">
-            <div><FaFacebook className="w-12 h-12 text-blue-600"/></div>
-            <div><FcGoogle className="w-12 h-12"/></div>
-            <div><FaXTwitter className="w-12 h-12 text-black"/></div>
+            <div>
+              <FaFacebook className="w-12 h-12 text-blue-600" />
+            </div>
+            <div>
+              <FcGoogle className="w-12 h-12" />
+            </div>
+            <div>
+              <FaXTwitter className="w-12 h-12 text-black" />
+            </div>
           </div>
         </div>
         {/* social login */}

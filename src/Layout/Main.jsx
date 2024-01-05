@@ -6,17 +6,19 @@ import Footer from "../Pages/footer/Footer";
 
 const Layout = () => {
   const location = useLocation();
-  const path = location.pathname.includes('login')
-  console.log(path);
+  const pathLogin = location.pathname.includes('login');
+  const pathSignup = location.pathname.includes('signup');
+  console.log(pathLogin,pathSignup);
   return (
     <>
-      {path || <nav>
+    
+      {pathLogin || <nav>
         <Navbar></Navbar>
       </nav>}
       <main>
         <Outlet></Outlet>
       </main>
-      {path || <footer>
+       {pathLogin || <footer>
         <Footer></Footer>
       </footer>}
     </>

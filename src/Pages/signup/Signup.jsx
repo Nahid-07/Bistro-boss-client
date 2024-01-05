@@ -3,13 +3,16 @@ import bg from "../../assets/others/authentication.png";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 const SignIn = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
+    const firstName = form.firstName.value;
+    const lastName = form.lastName.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    console.log(email, password, firstName, lastName);
   };
   return (
     <div
@@ -20,11 +23,17 @@ const SignIn = () => {
         <title>Bistro boss -- Sign Up</title>
       </Helmet>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Sign up new account
-          </h2>
-        </div>
+        <Link to='/'>
+          <div className="sm:mx-auto sm:w-full sm:max-w-sm bg-blue-600 p-5 rounded-sm text-center text-5xl italic font-bold">
+            <span className="text-orange-500">Bistro</span>{" "}
+            <span
+              className="text-white
+          "
+            >
+              Boss
+            </span>
+          </div>
+        </Link>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form onSubmit={handleLogin} className="space-y-6">

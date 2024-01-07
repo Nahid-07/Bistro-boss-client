@@ -4,15 +4,18 @@ import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
-    console.log(email, password);
-  };
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
+  const onSubmit = data => {
+    console.log(data);
+  }
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
@@ -37,7 +40,7 @@ const Login = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
               <label className="block text-sm font-medium leading-6 text-gray-900">
                 Email address
@@ -45,12 +48,13 @@ const Login = () => {
               <div className="mt-2">
                 <input
                   name="email"
+                  {...register("email", { required: true })}
                   type="email"
                   autoComplete="email"
-                  required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
+              {errors.email && <span className="text-red-600">This field is required</span>}
             </div>
 
             <div>
@@ -70,12 +74,13 @@ const Login = () => {
               <div className="mt-2">
                 <input
                   name="password"
+                  {...register("password", { required: true })}
                   type="password"
                   autoComplete="current-password"
-                  required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
+              {errors.password && <span className="text-red-600">This field is required</span>}
             </div>
 
             <div>

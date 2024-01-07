@@ -24,7 +24,7 @@ const SignIn = () => {
       </Helmet>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <Link to='/'>
-          <div className="sm:mx-auto sm:w-full sm:max-w-sm bg-blue-600 p-5 rounded-sm text-center text-5xl italic font-bold">
+          <div className="sm:mx-auto sm:w-full sm:max-w-sm bg-indigo-600 p-5 rounded-sm text-center text-5xl italic font-bold">
             <span className="text-orange-500">Bistro</span>{" "}
             <span
               className="text-white

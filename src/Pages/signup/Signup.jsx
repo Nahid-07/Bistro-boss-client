@@ -11,9 +11,9 @@ const SignIn = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     console.log(data);
-  }
+  };
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
@@ -46,10 +46,12 @@ const SignIn = () => {
                   name="firstName"
                   {...register("firstName", { required: true })}
                   type="text"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-                {errors.firstName && <span  className="text-red-600">This field is required</span>}
+              {errors.firstName && (
+                <span className="text-red-600">This field is required</span>
+              )}
             </div>
             <div>
               <label className="block text-sm font-medium leading-6 text-gray-900">
@@ -60,10 +62,48 @@ const SignIn = () => {
                   name="lastName"
                   {...register("lastName", { required: true })}
                   type="text"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-                {errors.lastName && <span  className="text-red-600">This field is required</span>}
+              {errors.lastName && (
+                <span className="text-red-600">This field is required</span>
+              )}
+            </div>
+            <div className=" flex justify-between">
+              <div className="w-full">
+                <label className="block text-sm font-medium leading-6 text-gray-900">
+                  Date of birth
+                </label>
+                <div className="mt-2">
+                  <input
+                    name="dob"
+                    {...register("dob", { required: true })}
+                    type="date"
+                    className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+                {errors.dob && (
+                  <span className="text-red-600">This field is required</span>
+                )}
+              </div>
+              <div className="w-full ml-2">
+                <label className="block text-sm font-medium leading-6 text-gray-900">
+                  Gender
+                </label>
+                <div className="mt-2">
+                  <select
+                    {...register("gender")}
+                    className="block px-2 w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  >
+                    <option value="female">female</option>
+                    <option value="male">male</option>
+                    <option value="other">other</option>
+                  </select>
+                </div>
+                {errors.gender && (
+                  <span className="text-red-600">This field is required</span>
+                )}
+              </div>
             </div>
             <div>
               <label className="block text-sm font-medium leading-6 text-gray-900">
@@ -75,25 +115,19 @@ const SignIn = () => {
                   {...register("email", { required: true })}
                   type="email"
                   autoComplete="email"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-              {errors.email && <span  className="text-red-600">This field is required</span>}
+              {errors.email && (
+                <span className="text-red-600">This field is required</span>
+              )}
             </div>
 
             <div>
               <div className="flex items-center justify-between">
-                <label className="block text-sm font-medium leading-6 text-gray-900">
+                <label className="block px-2 text-sm font-medium leading-6 text-gray-900">
                   Password
                 </label>
-                <div className="text-sm">
-                  <a
-                    href="#"
-                    className="font-semibold text-indigo-600 hover:text-indigo-500"
-                  >
-                    Forgot password?
-                  </a>
-                </div>
               </div>
               <div className="mt-2">
                 <input
@@ -101,11 +135,13 @@ const SignIn = () => {
                   {...register("password", { required: true })}
                   type="password"
                   autoComplete="current-password"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
-            {errors.password && <span  className="text-red-600">This field is required</span>}
+            {errors.password && (
+              <span className="text-red-600">This field is required</span>
+            )}
             <div>
               <button className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                 Sign in

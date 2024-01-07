@@ -10,7 +10,6 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm()
   const onSubmit = data => {
@@ -51,7 +50,7 @@ const Login = () => {
                   {...register("email", { required: true })}
                   type="email"
                   autoComplete="email"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
               {errors.email && <span className="text-red-600">This field is required</span>}
@@ -77,7 +76,7 @@ const Login = () => {
                   {...register("password", { required: true })}
                   type="password"
                   autoComplete="current-password"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
               {errors.password && <span className="text-red-600">This field is required</span>}

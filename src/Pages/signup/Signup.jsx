@@ -13,12 +13,20 @@ const SignIn = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const {emailPasswordUser} =useContext(AuthContext)
+  const {emailPasswordUser, updateUserProfile} =useContext(AuthContext)
   const onSubmit = (data) => {
+    const userName = data.firstName + ' ' + data.lastName;
     emailPasswordUser(data.email,data.password)
-    .then(result =>{
-      const user = result.user;
-      console.log(user);
+    .then(() =>{
+      const updateUser = {
+        displayName : userName
+      }
+      updateUserProfile(updateUser)
+      .then(()=>{
+
+      }).catch(err => {
+        console.log(err.message);
+      })
     }).catch(err =>{
       console.log(err);
     })

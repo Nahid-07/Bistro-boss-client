@@ -5,14 +5,23 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 const SignIn = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const {emailPasswordUser} =useContext(AuthContext)
   const onSubmit = (data) => {
-    console.log(data);
+    emailPasswordUser(data.email,data.password)
+    .then(result =>{
+      const user = result.user;
+      console.log(user);
+    }).catch(err =>{
+      console.log(err);
+    })
   };
   return (
     <div

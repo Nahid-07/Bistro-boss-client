@@ -7,29 +7,34 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import ButtonSpeener from "../../components/speener/ButtonSpeener";
 const SignIn = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
-  const {emailPasswordUser, updateUserProfile} =useContext(AuthContext)
+  const { emailPasswordUser, updateUserProfile, loader, setLoader } =
+    useContext(AuthContext);
   const onSubmit = (data) => {
-    const userName = data.firstName + ' ' + data.lastName;
-    emailPasswordUser(data.email,data.password)
-    .then(() =>{
-      const updateUser = {
-        displayName : userName
-      }
-      updateUserProfile(updateUser)
-      .then(()=>{
-
-      }).catch(err => {
-        console.log(err.message);
+    const userName = data.firstName + " " + data.lastName;
+    emailPasswordUser(data.email, data.password)
+      .then(() => {
+        const updateUser = {
+          displayName: userName,
+        };
+        updateUserProfile(updateUser)
+          .then(() => {})
+          .catch((err) => {
+            setLoader(false)
+          });
       })
-    }).catch(err =>{
-      console.log(err);
-    })
+      .catch((err) => {
+        console.log(err);
+        setLoader(false)
+      });
+      reset()
   };
   return (
     <div
@@ -161,7 +166,7 @@ const SignIn = () => {
             )}
             <div>
               <button className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                Sign in
+                {loader ? <ButtonSpeener></ButtonSpeener> : "Sign in"}
               </button>
             </div>
           </form>

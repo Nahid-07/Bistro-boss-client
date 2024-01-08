@@ -5,15 +5,28 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import ButtonSpeener from "../../components/speener/ButtonSpeener";
 
 const Login = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm();
+  const {signinUser,loader, setLoader} = useContext(AuthContext);
   const onSubmit = data => {
-    console.log(data);
+    signinUser(data.email, data.password)
+    .then((result)=>{
+      const user = result.user;
+      console.log(user);
+      setLoader(false)
+      // alert will go here
+    }).catch(err =>{
+      // err massage will go here
+      setLoader(false)
+    })
   }
   return (
     <div
@@ -84,7 +97,9 @@ const Login = () => {
 
             <div>
               <button className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                Sign in
+                {loader? <ButtonSpeener></ButtonSpeener>:
+                "Sign in"
+                }
               </button>
             </div>
           </form>

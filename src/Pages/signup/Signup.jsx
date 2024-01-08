@@ -13,7 +13,7 @@ const SignIn = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
   const { emailPasswordUser, updateUserProfile, loader, setLoader } =
     useContext(AuthContext);
@@ -27,14 +27,14 @@ const SignIn = () => {
         updateUserProfile(updateUser)
           .then(() => {})
           .catch((err) => {
-            setLoader(false)
+            setLoader(false);
           });
       })
       .catch((err) => {
         console.log(err);
-        setLoader(false)
+        setLoader(false);
       });
-      reset()
+    reset();
   };
   return (
     <div

@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
+  const { user } = useContext(AuthContext);
   return (
     <div className="px-6 py-2">
       <nav className="lg:flex justify-between items-center hidden">
@@ -11,12 +13,28 @@ const Navbar = () => {
           <h4 className="text-2xl uppercase font-bold">Restaurant</h4>
         </div>
         <ul className="flex space-x-6 text-lg">
-          <Link to='/'><li>Home</li></Link>
-          <Link to='/contactUs'><li>Contact Us</li></Link>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/contactUs">
+            <li>Contact Us</li>
+          </Link>
           <li>Dashbord</li>
-          <Link to='/ourmenu'><li>Our menu</li></Link>
-          <Link to='/ourShop'><li>Our Shop</li></Link>
-          <Link to='/login'><li>Login</li></Link>
+          <Link to="/ourmenu">
+            <li>Our menu</li>
+          </Link>
+          <Link to="/ourShop">
+            <li>Our Shop</li>
+          </Link>
+          {user.uid ? (
+            <button className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              Log out
+            </button>
+          ) : (
+            <Link to="/login">
+              <li>Login</li>
+            </Link>
+          )}
         </ul>
       </nav>
       {/* responsive */}
@@ -69,11 +87,25 @@ const Navbar = () => {
       >
         <ul className="flex flex-col items-center justify-center space-y-6 text-lg">
           <li>Home</li>
-          <Link to='/contactUs'><li>Contact Us</li></Link>
+          <Link to="/contactUs">
+            <li>Contact Us</li>
+          </Link>
           <li>Dashbord</li>
-          <Link to='/ourmenu'><li>Our menu</li></Link>
-          <Link to='/ourShop'><li>Our Shop</li></Link>
-          <Link to='/login'><li>Login</li></Link>
+          <Link to="/ourmenu">
+            <li>Our menu</li>
+          </Link>
+          <Link to="/ourShop">
+            <li>Our Shop</li>
+          </Link>
+          {user.uid ? (
+            <button className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              Log out
+            </button>
+          ) : (
+            <Link to="/login">
+              <li>Login</li>
+            </Link>
+          )}
         </ul>
       </nav>
     </div>

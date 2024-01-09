@@ -17,8 +17,8 @@ const Login = () => {
   } = useForm();
   const {signinUser,loader, setLoader} = useContext(AuthContext);
   const navigate = useNavigate();
-  let location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const onSubmit = data => {
     signinUser(data.email, data.password)
     .then((result)=>{

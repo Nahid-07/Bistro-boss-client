@@ -109,12 +109,12 @@ const Login = () => {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?{" "}
-            <a
-              href="#"
+            <Link
+              to='/signup'
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
               Create a new account
-            </a>
+            </Link>
           </p>
           <div className="flex justify-around mt-10 border p-5 bg-slate-100 rounded-sm shadow-md">
             <div>

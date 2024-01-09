@@ -174,13 +174,13 @@ const SignIn = () => {
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Not a member?{" "}
-            <a
-              href="#"
+          Already have an account?
+            <Link
+              to='/login'
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
-              Create a new account
-            </a>
+              Login
+            </Link>
           </p>
           <div className="flex justify-around mt-10 border p-5 bg-slate-100 rounded-sm shadow-md">
             <div>

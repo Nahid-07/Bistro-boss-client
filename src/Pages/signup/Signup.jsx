@@ -3,7 +3,7 @@ import bg from "../../assets/others/authentication.png";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -17,6 +17,7 @@ const SignIn = () => {
   } = useForm();
   const { emailPasswordUser, updateUserProfile, loader, setLoader } =
     useContext(AuthContext);
+  const navigate = useNavigate()
   const onSubmit = (data) => {
     const userName = data.firstName + " " + data.lastName;
     emailPasswordUser(data.email, data.password)
@@ -29,6 +30,7 @@ const SignIn = () => {
           .catch((err) => {
             setLoader(false);
           });
+          navigate('/')
       })
       .catch((err) => {
         console.log(err);

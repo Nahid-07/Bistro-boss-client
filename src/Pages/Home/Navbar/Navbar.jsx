@@ -4,7 +4,11 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
+  const handleLogout = ()=>{
+    logout()
+  }
+
   return (
     <div className="px-6 py-2">
       <nav className="lg:flex justify-between items-center hidden">
@@ -26,8 +30,8 @@ const Navbar = () => {
           <Link to="/ourShop">
             <li>Our Shop</li>
           </Link>
-          {user.uid ? (
-            <button className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          {user ? (
+            <button onClick={handleLogout} className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               Log out
             </button>
           ) : (
@@ -97,7 +101,7 @@ const Navbar = () => {
           <Link to="/ourShop">
             <li>Our Shop</li>
           </Link>
-          {user.uid ? (
+          {user ? (
             <button className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               Log out
             </button>

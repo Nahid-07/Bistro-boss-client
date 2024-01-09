@@ -3,7 +3,7 @@ import bg from "../../assets/others/authentication.png";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -16,13 +16,15 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const {signinUser,loader, setLoader} = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const onSubmit = data => {
     signinUser(data.email, data.password)
     .then((result)=>{
       const user = result.user;
       setLoader(false)
-      navigate('/')
+      navigate(from, { replace: true });
       // alert will go here
     }).catch(err =>{
       // err massage will go here

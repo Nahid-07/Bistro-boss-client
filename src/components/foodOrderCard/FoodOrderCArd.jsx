@@ -1,7 +1,26 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+
 const FoodOrderCArd = ({ item }) => {
-  const { name, recipe, image, price } = item;
+  const { name, recipe, image, price, } = item;
+  const {user}=  useContext(AuthContext);
   const handleAddToCart = item =>{
-    console.log(item);
+    const orderItmes = {
+      foodName : item.name,
+      foodPrice : item.price,
+      foodId : item._id,
+      userEmail : user.email,
+      userName : user.displayName
+    }
+    if(user){
+      fetch('http://localhost:5000/cart',{
+        method : "POST",
+        headers : {
+          "content-type" : "application/json"
+        },
+        body : JSON.stringify(orderItmes)
+      }).then(res => res.json()).then(data => console.log(data))
+    }
   }
   return (
     <div className="card w-96 bg-base-100 shadow-xl">

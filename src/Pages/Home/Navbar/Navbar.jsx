@@ -1,13 +1,14 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { IoCartOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
   const { user, logout } = useContext(AuthContext);
-  const handleLogout = ()=>{
-    logout()
-  }
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
     <div className="px-6 py-2">
@@ -16,7 +17,7 @@ const Navbar = () => {
           <h1 className="text-2xl uppercase font-bold">Bistro boss</h1>
           <h4 className="text-2xl uppercase font-bold">Restaurant</h4>
         </div>
-        <ul className="flex space-x-6 text-lg">
+        <ul className="flex items-center space-x-6 text-lg">
           <Link to="/">
             <li>Home</li>
           </Link>
@@ -30,8 +31,14 @@ const Navbar = () => {
           <Link to="/ourShop">
             <li>Our Shop</li>
           </Link>
+          <Link to="/cart">
+            <li className="p-2 rounded-full relative"><IoCartOutline className="text-3xl" /> <span className="absolute -top-1 right-0 text-xl text-red-600 font-bold">+0</span></li>
+          </Link>
           {user ? (
-            <button onClick={handleLogout} className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            <button
+              onClick={handleLogout}
+              className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
               Log out
             </button>
           ) : (
@@ -100,6 +107,9 @@ const Navbar = () => {
           </Link>
           <Link to="/ourShop">
             <li>Our Shop</li>
+          </Link>
+          <Link to="/cart">
+            <li className="p-2 rounded-full relative"><IoCartOutline className="text-3xl" /> <span className="absolute -top-1 right-0 text-xl text-red-600 font-bold">+0</span></li>
           </Link>
           {user ? (
             <button className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">

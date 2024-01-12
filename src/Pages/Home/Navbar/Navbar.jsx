@@ -2,13 +2,16 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { IoCartOutline } from "react-icons/io5";
+import useCart from "../../hooks/useCart";
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
   const { user, logout } = useContext(AuthContext);
+  const [cartItems] = useCart()
   const handleLogout = () => {
     logout();
   };
+
 
   return (
     <div className="px-6 py-2">
@@ -32,7 +35,7 @@ const Navbar = () => {
             <li>Our Shop</li>
           </Link>
           <Link to="/cart">
-            <li className="p-2 rounded-full relative"><IoCartOutline className="text-3xl" /> <span className="absolute top-1 right-0 bg-red-600 rounded-full px-1 text-white text-xs">+0</span></li>
+            <li className="p-2 rounded-full relative"><IoCartOutline className="text-3xl" /> <span className="absolute top-1 right-0 bg-red-600 rounded-full px-1 text-white text-xs">+{cartItems.length}</span></li>
           </Link>
           {user ? (
             <button

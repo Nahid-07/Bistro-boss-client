@@ -32,7 +32,7 @@ const Navbar = () => {
             <li>Our Shop</li>
           </Link>
           <Link to="/cart">
-            <li className="p-2 rounded-full relative"><IoCartOutline className="text-3xl" /> <span className="absolute -top-1 right-0 text-xl text-red-600 font-bold">+0</span></li>
+            <li className="p-2 rounded-full relative"><IoCartOutline className="text-3xl" /> <span className="absolute top-1 right-0 bg-red-600 rounded-full px-1 text-white text-xs">+0</span></li>
           </Link>
           {user ? (
             <button
@@ -109,7 +109,7 @@ const Navbar = () => {
             <li>Our Shop</li>
           </Link>
           <Link to="/cart">
-            <li className="p-2 rounded-full relative"><IoCartOutline className="text-3xl" /> <span className="absolute -top-1 right-0 text-xl text-red-600 font-bold">+0</span></li>
+          <li className="p-2 rounded-full relative"><IoCartOutline className="text-3xl" /> <span className="absolute top-1 right-0 bg-red-600 rounded-full px-1 text-white text-xs">+0</span></li>
           </Link>
           {user ? (
             <button className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">

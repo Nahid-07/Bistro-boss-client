@@ -3,18 +3,21 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { IoCartOutline } from "react-icons/io5";
 import useCart from "../../hooks/useCart";
+import CartSidebar from "../../../components/cartSidebar/CartSidebar";
 
 const Navbar = () => {
   const [open, setOpen] = useState(true);
+  const [isOpen, setIsopen] = useState(false)
   const { user, logout } = useContext(AuthContext);
   const [cartItems] = useCart()
   const handleLogout = () => {
     logout();
   };
 
-
+console.log(isOpen);
   return (
-    <div className="px-6 py-2">
+    <>
+      <div className="px-6 py-2">
       <nav className="lg:flex justify-between items-center hidden">
         <div>
           <h1 className="text-2xl uppercase font-bold">Bistro boss</h1>
@@ -34,9 +37,9 @@ const Navbar = () => {
           <Link to="/ourShop">
             <li>Our Shop</li>
           </Link>
-          <Link to="/cart">
-            <li className="p-2 rounded-full relative"><IoCartOutline className="text-3xl" /> <span className="absolute top-1 right-0 bg-red-600 rounded-full px-1 text-white text-xs">+{cartItems.length}</span></li>
-          </Link>
+          <>
+            <button onClick={()=> setIsopen(!isOpen)} className="p-2 rounded-full relative"><IoCartOutline className="text-3xl" /> <span className="absolute top-1 right-0 bg-red-600 rounded-full px-1 text-white text-xs">+{cartItems.length}</span></button>
+          </>
           {user ? (
             <button
               onClick={handleLogout}
@@ -126,6 +129,10 @@ const Navbar = () => {
         </ul>
       </nav>
     </div>
+    <CartSidebar
+      isOpen = {isOpen}
+    ></CartSidebar>
+    </>
   );
 };
 

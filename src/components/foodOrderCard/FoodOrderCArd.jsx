@@ -18,6 +18,7 @@ const FoodOrderCArd = ({ item }) => {
         foodId: item._id,
         userEmail: user.email,
         userName: user.displayName,
+        foodImage : item.image
       };
       fetch("http://localhost:5000/cart", {
         method: "POST",

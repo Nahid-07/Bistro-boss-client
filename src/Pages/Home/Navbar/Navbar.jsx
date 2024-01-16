@@ -30,7 +30,7 @@ console.log(isOpen);
           <Link to="/contactUs">
             <li>Contact Us</li>
           </Link>
-          <li>Dashbord</li>
+          <Link to='/dashbord'><li>Dashbord</li></Link>
           <Link to="/ourmenu">
             <li>Our menu</li>
           </Link>

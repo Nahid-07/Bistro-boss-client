@@ -9,6 +9,7 @@ import OurShop from "../Pages/ourShop/ourShop/OurShop";
 import ContactUs from "../Pages/contactUs/contactUs/ContactUs";
 import Login from "../Pages/login/Login";
 import SignIn from "../Pages/signup/Signup";
+import Dashbord from '../Layout/Dashbord'
 
 export const router = createBrowserRouter([
     {
@@ -40,5 +41,9 @@ export const router = createBrowserRouter([
     {
       path : '/signup',
       element : <SignIn></SignIn>
+    },
+    {
+      path : '/dashbord',
+      element:<Dashbord></Dashbord>
     }
   ]);

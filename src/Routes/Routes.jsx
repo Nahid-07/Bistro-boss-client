@@ -10,6 +10,7 @@ import ContactUs from "../Pages/contactUs/contactUs/ContactUs";
 import Login from "../Pages/login/Login";
 import SignIn from "../Pages/signup/Signup";
 import Dashbordlayout from "../Layout/DashbordLayout";
+import MyCart from "../Pages/Dashbord/MyCart";
 
 export const router = createBrowserRouter([
     {
@@ -45,6 +46,11 @@ export const router = createBrowserRouter([
     {
       path : '/dashbord',
       element:<Dashbordlayout></Dashbordlayout>,
-      children:''
+      children:[
+        {
+          path:'myCart',
+          element:<MyCart></MyCart>
+        }
+      ]
     }
   ]);

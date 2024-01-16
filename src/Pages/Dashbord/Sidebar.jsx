@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 
-const Dashbord = () => {
+const Sidebar = () => {
   const [isActive, setActive] = useState("false");
   const handleToggle = () => {
     setActive(!isActive);
@@ -121,4 +121,4 @@ const Dashbord = () => {
   );
 };
 
-export default Dashbord;
+export default Sidebar;

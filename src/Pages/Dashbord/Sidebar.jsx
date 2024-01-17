@@ -7,8 +7,10 @@ import {
   FaBars,
   FaCalendarCheck,
 } from "react-icons/fa";
-import { MdReviews } from "react-icons/md";
+import { MdReviews,MdMenuOpen } from "react-icons/md";
 import { IoWalletSharp } from "react-icons/io5";
+import { IoIosContact } from "react-icons/io";
+import { CiShop } from "react-icons/ci";
 
 const Sidebar = () => {
   const [isActive, setActive] = useState("false");
@@ -124,6 +126,7 @@ const Sidebar = () => {
                   }`
                 }
               >
+                <FaHome className="w-5 h-5" />
                 <span className="mx-4 font-medium">Home</span>
               </NavLink>
               <NavLink
@@ -134,6 +137,7 @@ const Sidebar = () => {
                   }`
                 }
               >
+                <MdMenuOpen className="h-5 w-5" />
                 <span className="mx-4 font-medium">Menu</span>
               </NavLink>
               <NavLink
@@ -144,6 +148,7 @@ const Sidebar = () => {
                   }`
                 }
               >
+                <CiShop className="h-5 w-5"/>
                 <span className="mx-4 font-medium">Shop</span>
               </NavLink>
               <NavLink
@@ -154,6 +159,7 @@ const Sidebar = () => {
                   }`
                 }
               >
+                <IoIosContact className='h-5 w-5'/>
                 <span className="mx-4 font-medium">Contact</span>
               </NavLink>
             </nav>

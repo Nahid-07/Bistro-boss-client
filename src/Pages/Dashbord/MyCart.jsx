@@ -1,7 +1,20 @@
 import useCart from "../hooks/useCart";
 
 const MyCart = () => {
-  const [cartItem] = useCart();
+  const [cartItem, refetch] = useCart();
+  const handleDelete = (id)=>{
+    fetch(`http://localhost:5000/cart/${id}`,{
+      method: "DELETE",
+    }).then(res => res.json()).then(data => {
+      if(data.deletedCount > 0){
+        refetch()
+        console.log('deleted');
+      }else{
+        console.log('something is wrong');
+      }
+    })
+    
+  }
   return (
     <div className="p-10">
         <div className="md:flex space-y-3 justify-between">
@@ -41,7 +54,7 @@ const MyCart = () => {
 
                   <td>{item.foodPrice}</td>
                   <td>
-                    <button className="bg-red-600 px-2 py-1 text-white rounded-sm">Delete</button>
+                    <button onClick={()=> handleDelete(item._id)} className="bg-red-600 px-2 py-1 text-white rounded-sm">Delete</button>
                   </td>
                 </tr>
               ))}

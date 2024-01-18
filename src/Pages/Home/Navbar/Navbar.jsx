@@ -13,8 +13,6 @@ const Navbar = () => {
   const handleLogout = () => {
     logout();
   };
-
-  console.log(isOpen);
   return (
     <>
       <div className="px-6 py-2">

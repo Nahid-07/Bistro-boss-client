@@ -17,7 +17,7 @@ const SignIn = () => {
   } = useForm();
   const { emailPasswordUser, updateUserProfile, loader, setLoader } =
     useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const onSubmit = (data) => {
     const userName = data.firstName + " " + data.lastName;
     emailPasswordUser(data.email, data.password)
@@ -26,17 +26,32 @@ const SignIn = () => {
           displayName: userName,
         };
         updateUserProfile(updateUser)
-          .then(() => {})
+          .then(() => {
+            const userDetailsForDB = {
+              userName: updateUser.displayName,
+              userEmail: data.email,
+            };
+            console.log(userDetailsForDB);
+            fetch("http://localhost:5000/user", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(userDetailsForDB),
+            })
+              .then((res) => res.json())
+              .then(() => {});
+          })
           .catch((err) => {
             setLoader(false);
           });
-          navigate('/')
+        navigate("/");
+        reset();
       })
       .catch((err) => {
         console.log(err);
         setLoader(false);
       });
-    reset();
   };
   return (
     <div
@@ -174,9 +189,9 @@ const SignIn = () => {
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-          Already have an account?
+            Already have an account?
             <Link
-              to='/login'
+              to="/login"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
               Login

@@ -9,6 +9,8 @@ const Sidebar = () => {
   const handleToggle = () => {
     setActive(!isActive);
   };
+  // TODO ADMIN AUTH
+  const isAdmin = true;
   return (
     <>
       {/* Small Screen Navbar */}
@@ -42,6 +44,11 @@ const Sidebar = () => {
 
           {/* Nav Items */}
           <div className="flex flex-col justify-between flex-1 mt-6">
+            {/* {
+              isAdmin ? <>
+                <
+              </> : <></>
+            } */}
             <UserMenu></UserMenu>
             <div className="divider"></div>
             <CommonMenu></CommonMenu>

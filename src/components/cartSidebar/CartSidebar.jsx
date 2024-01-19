@@ -18,7 +18,7 @@ const CartSidebar = ({ isOpen }) => {
             ))}
           </div>
           <div className="mt-5">
-            <Link to='/dashbord'><button className="bg-indigo-600 text-white w-full p-3 rounded">checkout</button></Link>
+            <Link to='/dashbord/mycart'><button className="bg-indigo-600 text-white w-full p-3 rounded">checkout</button></Link>
           </div>
         </div>
       )}

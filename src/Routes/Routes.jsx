@@ -12,6 +12,7 @@ import SignIn from "../Pages/signup/Signup";
 import Dashbordlayout from "../Layout/DashbordLayout";
 import MyCart from "../Pages/Dashbord/MyCart";
 import PrivateRoute from "./PrivateRoute";
+import AllUser from "../Pages/Dashbord/AllUser";
 
 export const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
         {
           path:'myCart',
           element:<MyCart></MyCart>
+        },
+        {
+          path:'all-users',
+          element:<AllUser></AllUser>
         }
       ]
     }

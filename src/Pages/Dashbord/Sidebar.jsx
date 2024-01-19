@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import UserMenu from "../../components/userMenu/UserMenu";
 import CommonMenu from "../../components/commonMenuDashbord/CommonMenu";
+import AdminMenu from "../../components/sidebarAdminMenu/AdminMenu";
 
 const Sidebar = () => {
   const [isActive, setActive] = useState("false");
@@ -44,12 +45,15 @@ const Sidebar = () => {
 
           {/* Nav Items */}
           <div className="flex flex-col justify-between flex-1 mt-6">
-            {/* {
-              isAdmin ? <>
-                <
-              </> : <></>
-            } */}
-            <UserMenu></UserMenu>
+            {isAdmin ? (
+              <>
+                <AdminMenu></AdminMenu>
+              </>
+            ) : (
+              <>
+                <UserMenu></UserMenu>
+              </>
+            )}
             <div className="divider"></div>
             <CommonMenu></CommonMenu>
           </div>

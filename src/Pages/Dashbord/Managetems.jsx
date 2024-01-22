@@ -4,8 +4,7 @@ const ManageItems = () => {
   return (
     <div className="">
       <SectionHeader
-        subHeader={"---What's new?---"}
-        mainHeader={"ADD AN ITEM"}
+        mainHeader={"Update ITEM"}
       ></SectionHeader>
       <div className="lg:w-1/2 mx-auto p-10 bg-slate-200 mt-20">
         <div>

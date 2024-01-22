@@ -1,6 +1,6 @@
 import SectionHeader from "../../components/sectionHeader/sectionHeader";
 
-const AddItems = () => {
+const ManageItems = () => {
   return (
     <div className="">
       <SectionHeader
@@ -54,7 +54,7 @@ const AddItems = () => {
         </div>
         <div>
           <button className="bg-[#D1A054] px-5 py-2 rounded-sm mt-5">
-            Add Items
+            Update Items
           </button>
         </div>
       </div>
@@ -62,4 +62,4 @@ const AddItems = () => {
   );
 };
 
-export default AddItems;
+export default ManageItems;

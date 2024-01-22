@@ -14,6 +14,7 @@ import MyCart from "../Pages/Dashbord/MyCart";
 import PrivateRoute from "./PrivateRoute";
 import AllUser from "../Pages/Dashbord/AllUser";
 import AddItems from "../Pages/Dashbord/AddItems";
+import ManageItems from "../Pages/Dashbord/Managetems";
 
 export const router = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
         {
           path:'add-items',
           element:<AddItems></AddItems>
+        },
+        {
+          path:'manage-items',
+          element:<ManageItems></ManageItems>
         },
       ]
     }

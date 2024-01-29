@@ -4,14 +4,15 @@ import { FaBars } from "react-icons/fa";
 import UserMenu from "../../components/userMenu/UserMenu";
 import CommonMenu from "../../components/commonMenuDashbord/CommonMenu";
 import AdminMenu from "../../components/sidebarAdminMenu/AdminMenu";
+import useAdmin from "../hooks/useAdmin";
 
 const Sidebar = () => {
   const [isActive, setActive] = useState("false");
   const handleToggle = () => {
     setActive(!isActive);
   };
+  const [isAdmin] = useAdmin()
   // TODO ADMIN AUTH
-  const isAdmin = true;
   return (
     <>
       {/* Small Screen Navbar */}

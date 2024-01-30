@@ -16,6 +16,7 @@ import AllUser from "../Pages/Dashbord/AllUser";
 import AddItems from "../Pages/Dashbord/AddItems";
 import ManageItems from "../Pages/Dashbord/Managetems";
 import Reservation from "../Pages/Dashbord/Reservation";
+import AddReview from "../Pages/Dashbord/AddReview";
 
 export const router = createBrowserRouter([
     {
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
         {
           path:'reservation',
           element:<Reservation></Reservation>
+        },
+        {
+          path:'add-review',
+          element:<AddReview></AddReview>
         },
       ]
     }

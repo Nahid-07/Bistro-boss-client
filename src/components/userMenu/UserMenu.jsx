@@ -25,7 +25,7 @@ const UserMenu = () => {
         <span className="mx-4 font-medium">User Home</span>
       </NavLink>
       <NavLink
-        to="my-bookings"
+        to="reservation"
         className={({ isActive }) =>
           `flex items-center px-4 py-2 mt-3  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
             isActive ? "bg-gray-300  text-gray-700" : "text-black"

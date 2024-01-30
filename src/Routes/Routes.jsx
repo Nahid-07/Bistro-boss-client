@@ -15,6 +15,7 @@ import PrivateRoute from "./PrivateRoute";
 import AllUser from "../Pages/Dashbord/AllUser";
 import AddItems from "../Pages/Dashbord/AddItems";
 import ManageItems from "../Pages/Dashbord/Managetems";
+import Reservation from "../Pages/Dashbord/Reservation";
 
 export const router = createBrowserRouter([
     {
@@ -66,6 +67,10 @@ export const router = createBrowserRouter([
         {
           path:'manage-items',
           element:<ManageItems></ManageItems>
+        },
+        {
+          path:'reservation',
+          element:<Reservation></Reservation>
         },
       ]
     }

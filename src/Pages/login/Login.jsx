@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import ButtonSpeener from "../../components/speener/ButtonSpeener";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const {
@@ -29,6 +30,12 @@ const Login = () => {
     }).catch(err =>{
       // err massage will go here
       setLoader(false)
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${err.message}`,
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
     })
   }
   return (

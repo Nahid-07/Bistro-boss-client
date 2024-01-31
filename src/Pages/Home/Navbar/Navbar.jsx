@@ -111,7 +111,7 @@ const Navbar = () => {
           }`}
         >
           <ul className="flex flex-col items-center justify-center space-y-6 text-lg">
-            <li>Home</li>
+            <Link to='/'><li>Home</li></Link>
             <Link to="/contactUs">
               <li>Contact Us</li>
             </Link>

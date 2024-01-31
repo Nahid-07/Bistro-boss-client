@@ -17,6 +17,7 @@ import AddItems from "../Pages/Dashbord/AddItems";
 import ManageItems from "../Pages/Dashbord/Managetems";
 import Reservation from "../Pages/Dashbord/Reservation";
 import AddReview from "../Pages/Dashbord/AddReview";
+import UserHome from "../Pages/Dashbord/UserHome";
 
 export const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
       path : '/dashbord',
       element:<PrivateRoute><Dashbordlayout></Dashbordlayout></PrivateRoute>,
       children:[
+        {
+          path:'user-home',
+          element:<UserHome></UserHome>
+        },
         {
           path:'myCart',
           element:<MyCart></MyCart>

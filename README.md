@@ -1,8 +1,22 @@
-# React + Vite
+# Bistroboss
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a restaurant based project. In this project user can order foopds on their demand. Before order user must be signed in. For authentication I used google firebase auth. There is a user dashbord and Admin dashbord. From user dashbord user can cancel food order. Can see there ordered food.How much should they for food. In admin dashbord user can delete a user, add a food items, delete food items. Many more just explore the project.
 
-Currently, two official plugins are available:
+## Technology i have used in this project:
+- React.JS + vite js
+- EXpress.Js
+- MongoDb
+- Tailwind Css
+- Firebase
+- Tansstack Query
+- React hook form
+- Axios
+- react icons
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## project Link
+[Bistron=boss](https://bistro-boss-a90cb.web.app/)
+user Email : arnisha@gmail.com
+User pass : 123456
+# admin
+Admin email : misenora@gmail.com
+Admin pass : 123456

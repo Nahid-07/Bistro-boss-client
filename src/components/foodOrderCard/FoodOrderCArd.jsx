@@ -20,7 +20,7 @@ const FoodOrderCArd = ({ item }) => {
         userName: user.displayName,
         foodImage : item.image
       };
-      fetch("http://localhost:5000/cart", {
+      fetch("https://bistro-boss-server-lilac-iota.vercel.app/cart", {
         method: "POST",
         headers: {
           "content-type": "application/json",

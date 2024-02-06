@@ -33,7 +33,7 @@ const SignIn = () => {
               userEmail: data.email,
             };
             console.log(userDetailsForDB);
-            fetch("http://localhost:5000/user", {
+            fetch("https://bistro-boss-server-lilac-iota.vercel.app/user", {
               method: "POST",
               headers: {
                 "content-type": "application/json",

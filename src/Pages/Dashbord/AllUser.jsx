@@ -7,7 +7,7 @@ const AllUser = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users");
+      const res = await fetch("https://bistro-boss-server-lilac-iota.vercel.app/users");
       const data = res.json();
       return data;
     },
@@ -32,7 +32,7 @@ const AllUser = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/users/admin/${user._id}`, {
+          fetch(`https://bistro-boss-server-lilac-iota.vercel.app/users/admin/${user._id}`, {
             method: "PATCH",
           })
             .then((res) => res.json())
@@ -75,7 +75,7 @@ swalWithBootstrapButtons.fire({
   reverseButtons: true
 }).then((result) => {
   if (result.isConfirmed) {
-    fetch(`http://localhost:5000/users/delete/${id}`,{
+    fetch(`https://bistro-boss-server-lilac-iota.vercel.app/users/delete/${id}`,{
       method : "DELETE"
     }).then(res => res.json()).then(data => {
       refetch()

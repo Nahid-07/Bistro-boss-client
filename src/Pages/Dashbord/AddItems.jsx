@@ -26,7 +26,7 @@ const AddItems = () => {
       .then((data) => {
         const image = data.data.display_url;
         const menuData = { name, category, price: priceFloat, recipe, image };
-        fetch("http://localhost:5000/add-items", {
+        fetch("https://bistro-boss-server-lilac-iota.vercel.app/add-items", {
           method: "POST",
           headers: {
             "content-type": "application/json",
